@@ -25,6 +25,7 @@
         </ul>
     </nav>
 <?php
+require('scripts.php');
 if(isset($_GET['page_id'])){
     $page_id = $_GET['page_id'];
     switch ($page_id){
@@ -49,18 +50,40 @@ if(isset($_GET['page_id'])){
     }
    
 } else {// если page_id не указан грузим главную
+
+if(isset($_POST['submit'])){
+        $goods = isset($_POST['goods']) ? trim(strip_tags($_POST['goods'])): null;//Принимаем форму
+        $contacts = isset($_POST['contacts']) ? trim(strip_tags($_POST['contacts'])) : null;
+        $full_price = isset($_POST['full_price']) ? trim(strip_tags($_POST['full_price'])) : null;
+        $prepay = isset($_POST['prepay']) ? trim(strip_tags($_POST['prepay'])) : null;
+    
+        $goods = mysqli_real_escape_string($cnn, $goods);//Экранируем спец. символы
+        $contacts = mysqli_real_escape_string($cnn, $contacts);
+        $full_price = mysqli_real_escape_string($cnn, $full_price);
+        $prepay = mysqli_real_escape_string($cnn, $prepay);
+        
+        $data = "INSERT INTO orders (goods, contacts, full_price, prepay) VALUES ('$goods', '$contacts', '$full_price', $prepay)";
+        $sql = mysqli_query($cnn, $data);
+        if( !$sql ){
+            echo mysqli_error($cnn);
+            exit;
+        }
+        header('location: index.php?page_id=success');
+        exit;
+    }    
+    
 ?>
     <div class="form_box">
         <h3 class="main_color">Главная</h3>
         <form action="index.php" method="post">
             <label for="card_id">Товар:</label>
-            <textarea type="text" class="rfield" name="card_id"  placeholder="Минвата" required></textarea>
+            <textarea type="text" class="rfield" name="goods"  placeholder="Минвата" required></textarea>
             <label for="persona">Контакты:</label>
-            <input type="text" class="rfield" name="name" placeholder="0981112233" pattern="^[А-Яа-яІіЇїЄє\s\.]+$" maxlength="50" required/>
+            <input type="text" class="rfield" name="contacts" placeholder="0981112233" required/>
             <label for="user_phone">Сумма заказа:</label>
-            <input type="tel" class="rfield" name="phone" placeholder="333" required maxlength="10" pattern="[0-9]{10,13}"/>
+            <input type="text" class="rfield" name="full_price" placeholder="333"/>
             <label for="user_phone">Предоплата:</label>
-            <input type="tel" class="rfield" name="phone" placeholder="155" required maxlength="10" pattern="[0-9]{10,13}"/>
+            <input type="text" class="rfield" name="prepay" placeholder="155"/>
             <input type="submit" class="btn_submit" name="submit" value="Отправить данные" />
         </form>
         
