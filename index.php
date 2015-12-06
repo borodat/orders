@@ -33,7 +33,7 @@ if(isset($_GET['page_id'])){
         require('show_all.php');
         break;
     case "unsent":
-        require('show_unsent.php');
+        require('show_unshipped.php');
         break;
     case "edit":
         require('show_for_edit.php');
