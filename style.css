@@ -1,166 +1,167 @@
 body {
-    background: url(fon.png);
-    font-family: 'PT Sans', sans-serif;
-    font-weight: bold;
-    color: #3d3f4d;
+  background: url(fon.png);
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+  color: #3d3f4d;
 }
 
 h3 {
-    text-align: center;
+  text-align: center;
 }
+
 nav {
-    width: 750px;
-    margin: 0 auto;
-    overflow: hidden;
+  width: 750px;
+  margin: 0 auto;
+  overflow: hidden;
 }
+
 nav ul {
-    padding: 0;
+  padding: 0;
 }
+
 nav li {
-    list-style: none;
-    width: 18%;
-    float: left;
-    margin: 0 1%;
-    
+  list-style: none;
+  width: 18%;
+  float: left;
+  margin: 0 1%;
 }
 
 nav a {
-    width: 100%;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
 }
 
 .form_box {
-    width: 270px;
-    margin: 20px auto;
+  width: 270px;
+  margin: 20px auto;
 }
 
 .form_box label {
-    font-size: 16px;
-    display: block;
-    position: relative;
+  font-size: 16px;
+  display: block;
+  position: relative;
 }
 
-.form_box input,
+input,
 textarea,
 a {
-    display: inline-block;
-    border: 2px solid #cfcfcf;
-    font-size: 14px;
-    text-align: center;
-    padding: 7px 0;
-    width: 266px;
-    margin-bottom: 20px;
-    transition: border 0.5, background 0.5s;
-    -webkit-transition: border 0.5s, background 0.5s;
-    -moz-transition: all 0.5s;
-}
-
-.form_box input[type=checkbox] {
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    right: -25px;
+  display: inline-block;
+  border: 2px solid #cfcfcf;
+  font-size: 14px;
+  text-align: center;
+  padding: 7px 0;
+  width: 266px;
+  margin-bottom: 20px;
+  transition: border 0.5, background 0.5s;
+  -webkit-transition: border 0.5s, background 0.5s;
+  -moz-transition: all 0.5s;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .form_box input:focus {
-    outline: none;
-    border-color: #07a6e6;
+  outline: none;
+  border-color: #07a6e6;
 }
 
-.form_box .card_default {
-    width: 187px;
-}
-
-.form_box .edit_label{
-    width: 62%;
-    display: inline-block;
-}
-
-.edit_button {
-    width: 38%;
-    float: right;
-}
-
-.form_box .card_id {
-    width: 70px;
-}
-
-.form_box .btn_submit,
+input.btn_status,
+input.btn_submit,
 a {
-    font-family: Arial, sans-serif;
-    border: none;
-    width: 100%;
-    text-align: center;
-    background: #07a6e6;
-    font-size: 13px;
-    font-weight: bold;
-    color: #ffffff;
-    cursor: pointer;
-    height: 35px;
-    line-height: 35px;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  border: none;
+  width: 100%;
+  text-align: center;
+  background: #07a6e6;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  height: 35px;
+  line-height: 35px;
+  padding: 0;
 }
 
-.form_box .btn_submit:hover,
+input.btn_status {
+  width: 75px;
+  height: 75px;
+  margin: 0;
+  background: #ce3939;
+}
+
+input.btn_status.success {
+  background: #55c685;
+}
+
+form input.update {
+  width: 300px;
+  margin: 20px auto 0 auto;
+}
+
+.btn_status:hover,
+.btn_submit:hover,
 a:hover {
-    background: #009ac2;
+  background: #009ac2;
 }
 
-.form_box .btn_submit:active,
+.btn_status:active,
+.btn_submit:active,
 a:active {
-    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-.form_box .btn_submit.disabled,
-.form_box .btn_submit.disabled:hover {
-    background: #afdde6;
-    cursor: default;
+.btn_submit.disabled,
+.btn_submit.disabled:hover {
+  background: #afdde6;
+  cursor: default;
 }
 
 .green_color {
-    color: #45bf3b;
+  color: #45bf3b;
 }
 
 .green {
-    background: #55c685;
+  background: #55c685;
 }
+
 .grey {
-    background: #847f7f;
+  background: #847f7f;
 }
 
 .main_color {
-    color: #07a6e6;
+  color: #07a6e6;
 }
 
 .error {
-    color: #e14141;
+  color: #e14141;
 }
 
 table {
-    border: 2px solid #07a6e6;
-    width: 780px;
-    margin: 0 auto;
-    border-collapse: collapse;
+  border: 2px solid #07a6e6;
+  width: 780px;
+  margin: 0 auto;
+  border-collapse: collapse;
 }
 
 table td,
 table th {
-    padding: 10px;
-    border: 1px solid #07a6e6;
-    text-align: center;
+  padding: 10px;
+  border: 1px solid #07a6e6;
+  text-align: center;
 }
 
 table td:nth-child(3) {
-    width: 120px;
+  width: 120px;
 }
 
 table caption {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 table caption a {
-    margin: 0;
+  margin: 0;
 }
