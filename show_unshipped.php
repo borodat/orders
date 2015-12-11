@@ -1,6 +1,6 @@
 <table>
     <caption>
-      <h3 class="main_color">Все заказы:</h3></caption>
+      <h3 class="main_color">Неотгруженные заказы:</h3></caption>
     <tr>
       <th>ID</th>
       <th>Дата</th>
@@ -8,7 +8,6 @@
       <th>Номер заказчика</th>
       <th>Сумма заказа</th>
       <th>Предоплата</th>
-      <th>Отгружен</th>
       <th>Заказан у поставщика</th>
       <th>Клиент оповещен</th>
       <th>Отгрузить</th>
@@ -27,23 +26,25 @@ $show_all = mysqli_query($cnn, "SELECT id, goods, full_price, prepay, contacts, 
   <td> <?php echo $row['contacts']; ?> </td>
   <td> <?php echo $row['full_price']; ?> </td>
   <td> <?php echo $row['prepay']; ?> </td>
-  <td> <?php echo $row['is_shipped']; ?> </td>   
   <td> 
     <form action="handler.php" method="post">
-      <input type="text" class="hidden" name="id" value="<?php echo $row['id']; ?>">
-      <input type='submit' name='submit' class='btn_status  <?php echo $status_order;?>' value='заказан'>
+      <input type="text" class="hidden" name="id" value="<?php echo $row['id'];?>">
+      <input type="text" class="hidden" name="status" value="<?php echo $status_order;?>">
+      <input type='submit' name='submit' class='btn_status  <?php echo $status_order; ?>' value='заказан'>
     </form>
   </td>
   <td>
     <form action="handler.php" method="post">
       <input type="text" class='hidden' name="id" value="<?php echo $row['id']; ?>">
+      <input type="text" class="hidden" name="status" value="<?php echo $status_called;?>">
       <input type='submit' name='submit' class='btn_status <?php echo $status_called;?>' value='оповещен'>
     </form>
   </td>
   <td>
     <form action="handler.php" method="post">
       <input type="text" class="hidden" name="id" value="<?php echo $row['id']; ?>">
-      <input type='submit' name='submit' class='btn_status <?php echo $status_called;?>' value='отгружен'>
+      <input type="text" class="hidden" name="status" value="<?php echo $status_shipped;?>">
+      <input type='submit' name='submit' class='btn_status <?php echo $status_shipped;?>' value='отгружен'>
     </form>
   </td>
 </tr>

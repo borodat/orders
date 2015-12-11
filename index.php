@@ -68,7 +68,7 @@ if(isset($_POST['submit'])){
             echo mysqli_error($cnn);
             exit;
         }
-        header('location: index.php?page_id=success');
+        header('location: index.php');
         exit;
     }    
     

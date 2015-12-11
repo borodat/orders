@@ -154,8 +154,8 @@ table th {
   text-align: center;
 }
 
-table td:nth-child(3) {
-  width: 120px;
+table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.04);
 }
 
 table caption {
