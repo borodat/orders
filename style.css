@@ -1,33 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: url(fon.png);
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
+  font-size: 16px;
   color: #3d3f4d;
 }
 
 h3 {
   text-align: center;
+  margin: 20px 0;
 }
 
 nav {
   width: 750px;
   margin: 0 auto;
   overflow: hidden;
+  text-align: center;
 }
+
+a {
+  text-decoration: none;
+}
+
 
 nav ul {
   padding: 0;
+  margin-bottom: 0;
 }
 
 nav li {
   list-style: none;
   width: 18%;
-  float: left;
+  display: inline-block;
   margin: 0 1%;
 }
 
 nav a {
   width: 100%;
+  margin-bottom: 0;
 }
 
 .hidden {
@@ -35,33 +49,33 @@ nav a {
 }
 
 .form_box {
-  width: 270px;
+  width: 404px;
   margin: 20px auto;
 }
 
 .form_box label {
-  font-size: 16px;
+  font-size: 18px;
   display: block;
   position: relative;
+  margin: 0 0 5px;
 }
 
 input,
 textarea,
 a {
+  font-family: 'PT Sans', sans-serif;
+  color: #3d3f4d;
   display: inline-block;
   border: 2px solid #cfcfcf;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   padding: 7px 0;
-  width: 266px;
+  width: 100%;
   margin-bottom: 20px;
   transition: border 0.5, background 0.5s;
   -webkit-transition: border 0.5s, background 0.5s;
   -moz-transition: all 0.5s;
-}
-
-a {
-  text-decoration: none;
+  padding: 10px;
 }
 
 .form_box input:focus {
@@ -72,7 +86,7 @@ a {
 input.btn_status,
 input.btn_submit,
 a {
-  font-family: Arial, sans-serif;
+  text-transform: uppercase;
   border: none;
   width: 100%;
   text-align: center;
@@ -81,25 +95,40 @@ a {
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
-  height: 35px;
+  height: 47px;
   line-height: 35px;
-  padding: 0;
+  padding: 7px 0;
 }
 
-input.btn_status {
+form input.btn_status {
   width: 75px;
   height: 75px;
   margin: 0;
   background: #ce3939;
+  font-size: 12px;
+  font-weight: normall;
 }
 
 input.btn_status.success {
   background: #55c685;
 }
+input.btn_status.normal {
+  background: #07a6e6;
+}
 
-form input.update {
+input.update {
   width: 300px;
   margin: 20px auto 0 auto;
+}
+
+.half-input {
+  width: 47.5%;
+  float: left;
+  margin-right: 5%;
+}
+
+.half-input:nth-child(even) {
+  margin-right: 0;
 }
 
 .btn_status:hover,
@@ -142,7 +171,7 @@ a:active {
 
 table {
   border: 2px solid #07a6e6;
-  width: 780px;
+  width: 90%;
   margin: 0 auto;
   border-collapse: collapse;
 }

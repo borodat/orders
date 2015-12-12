@@ -20,7 +20,6 @@
             <li><a href="index.php" class="grey">Главная</a></li>
             <li><a href="index.php?page_id=all" class="grey">Все заказы</a></li>
             <li><a href="index.php?page_id=unsent" class="grey">Неотгруженные</a></li>
-            <li><a href="index.php?page_id=edit" class="grey">Редактировать</a></li>
             <li><a href="../cards/" class="green">Карточки</a></li>
         </ul>
     </nav>
@@ -30,10 +29,10 @@ if(isset($_GET['page_id'])){
     $page_id = $_GET['page_id'];
     switch ($page_id){
     case "all":
-        require('show_all.php');
+        require('all.php');
         break;
     case "unsent":
-        require('show_unshipped.php');
+        require('unshipped.php');
         break;
     case "edit":
         require('show_for_edit.php');
@@ -77,13 +76,17 @@ if(isset($_POST['submit'])){
         <h3 class="main_color">Главная</h3>
         <form action="index.php" method="post">
             <label for="card_id">Товар:</label>
-            <textarea type="text" class="rfield" name="goods"  placeholder="Минвата" required></textarea>
+            <textarea type="text" class="rfield" name="goods"  rows="5" placeholder="Минвата" required></textarea>
             <label for="persona">Контакты:</label>
             <input type="text" class="rfield" name="contacts" placeholder="0981112233" required/>
-            <label for="user_phone">Сумма заказа:</label>
-            <input type="text" class="rfield" name="full_price" placeholder="333"/>
-            <label for="user_phone">Предоплата:</label>
-            <input type="text" class="rfield" name="prepay" placeholder="155"/>
+            <div class="half-input">
+              <label for="user_phone">Сумма заказа:</label>
+              <input type="text" class="rfield" name="full_price" placeholder="333"/>
+            </div>
+            <div class="half-input">
+              <label for="user_phone">Предоплата:</label>
+              <input type="text" class="rfield" name="prepay" placeholder="155"/>
+            </div>
             <input type="submit" class="btn_submit" name="submit" value="Отправить данные" />
         </form>
         

@@ -27,7 +27,7 @@ $pass = '04c95ac8d4ddac707bd0c8020cee7ffa';
   $_SESSION['admin'] = $admin;
     header("Location: index.php");
     exit;
-  } else echo '<p class="error">Логин или пароль неверны!</p>';
+  } else echo '<h3 class="error">Логин или пароль неверны!</h3>';
 }
 ?>
       <h3 class="main_color">Авторизация:</h3>

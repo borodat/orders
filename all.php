@@ -19,5 +19,5 @@
 </table>
 <div class="form_box">
     <a href="index.php">На главную</a>
-    <a href="show_all.php?do=logout" class="grey">Выход</a>
+    <a href="index.php?do=logout" class="grey">Выход</a>
 </div>

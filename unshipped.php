@@ -11,6 +11,7 @@
       <th>Заказан у поставщика</th>
       <th>Клиент оповещен</th>
       <th>Отгрузить</th>
+      <th>Изменить</th>
     </tr>
 <?php
 $show_all = mysqli_query($cnn, "SELECT id, goods, full_price, prepay, contacts, date, is_ordered, is_called, is_shipped FROM orders WHERE is_shipped='0' ORDER BY id DESC");
@@ -47,6 +48,12 @@ $show_all = mysqli_query($cnn, "SELECT id, goods, full_price, prepay, contacts, 
       <input type='submit' name='submit' class='btn_status <?php echo $status_shipped;?>' value='отгружен'>
     </form>
   </td>
+  <td>
+    <form action="edit.php" method="post">
+      <input type="text" class="hidden" name="id" value="<?php echo $row['id']; ?>">
+      <input type='submit' name='submit' class='btn_status normal' value='изменить'>
+    </form>
+  </td>
 </tr>
 <?php
     } //end of while
@@ -56,5 +63,5 @@ $show_all = mysqli_query($cnn, "SELECT id, goods, full_price, prepay, contacts, 
   
 <div class="form_box">
   <a href="index.php">На главную</a>
-  <a href="show_all.php?do=logout" class="grey">Выход</a>
+  <a href="index?do=logout" class="grey">Выход</a>
 </div>
