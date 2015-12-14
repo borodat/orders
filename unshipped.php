@@ -16,9 +16,9 @@
 <?php
 $show_all = mysqli_query($cnn, "SELECT id, goods, full_price, prepay, contacts, date, is_ordered, is_called, is_shipped FROM orders WHERE is_shipped='0' ORDER BY id DESC");
     while ($row = mysqli_fetch_array($show_all)){
-    $status_order = $row['is_ordered'] ? "success" : "";
-    $status_called = $row['is_called'] ? "success" : "";
-    $status_shipped = $row['is_shipped'] ? "success" : "";
+//    $status_order = $row['is_ordered'] ? "success" : "";
+//    $status_called = $row['is_called'] ? "success" : "";
+//    $status_shipped = $row['is_shipped'] ? "success" : "";
 ?>
 <tr>
   <td> <?php echo $row['id']; ?> </td>
