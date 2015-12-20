@@ -1,28 +1,17 @@
-$(function () {
-  var updateButtons = $("form input[type='submit']");
-  
-  $('form').submit(function(){
-    var str = $(this).serialize();
-    $.ajax({
-      type: 'POST',
-      url: 'handler.php',
-      data: str,
-      success: function(data){
-        updateButtons.attr('class', data);
-      },
-    });
-  });
-      
-  
-  $.ajax({
-    type: 'POST',
-    url: 'handler.php',
-    success: function(data){
-      updateButtons.attr('class', data);
-    },
-    error: function(){
-      alert ('ERROR loading data');
-    },
-  });
-    
-});
+function getXmlHtttpRequest(){
+  var xmlhttp;
+  try {
+    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+  } catch (e) {
+    try {
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (E) {
+      xmlhttp = false;
+    }
+  }
+  if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+    xmlhttp = new XMLHttpRequest();
+  }
+  return xmlhttp;
+}
+

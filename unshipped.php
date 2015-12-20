@@ -28,21 +28,21 @@ $show_all = mysqli_query($cnn, "SELECT id, goods, full_price, prepay, contacts, 
   <td> <?php echo $row['full_price']; ?> </td>
   <td> <?php echo $row['prepay']; ?> </td>
   <td> 
-    <form action="handler.php" method="post">
+    <form method="post">
       <input type="text" class="hidden" name="id" value="<?php echo $row['id'];?>">
       <input type="text" class="hidden" name="status" value="<?php echo $status_order;?>">
       <input type='submit' name='submit' class='btn_status  <?php echo $status_order; ?>' value='заказан'>
     </form>
   </td>
   <td>
-    <form action="handler.php" method="post">
+    <form method="post">
       <input type="text" class='hidden' name="id" value="<?php echo $row['id']; ?>">
       <input type="text" class="hidden" name="status" value="<?php echo $status_called;?>">
       <input type='submit' name='submit' class='btn_status <?php echo $status_called;?>' value='оповещен'>
     </form>
   </td>
   <td>
-    <form action="handler.php" method="post">
+    <form method="post">
       <input type="text" class="hidden" name="id" value="<?php echo $row['id']; ?>">
       <input type="text" class="hidden" name="status" value="<?php echo $status_shipped;?>">
       <input type='submit' name='submit' class='btn_status <?php echo $status_shipped;?>' value='отгружен'>
