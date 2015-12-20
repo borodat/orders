@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cards</title>
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+<!--    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>-->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -92,6 +92,9 @@ if(isset($_POST['submit'])){
         
     </div>
 <?php }// конец елс?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
 </body>

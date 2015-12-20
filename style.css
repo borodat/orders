@@ -6,7 +6,7 @@ body {
   background: url(fon.png);
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   color: #3d3f4d;
 }
 
@@ -83,8 +83,8 @@ a {
   border-color: #07a6e6;
 }
 
-input.btn_status,
-input.btn_submit,
+.btn_status,
+.btn_submit,
 a {
   text-transform: uppercase;
   border: none;
@@ -100,16 +100,15 @@ a {
   padding: 7px 0;
 }
 
-form input.btn_status {
+form .btn_status {
   width: 75px;
   height: 75px;
   margin: 0;
   background: #ce3939;
-  font-size: 12px;
-  font-weight: normall;
+  font-size: 10px;
 }
 
-input.btn_status.success {
+form .btn_status.success {
   background: #55c685;
 }
 input.btn_status.normal {
