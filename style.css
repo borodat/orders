@@ -4,13 +4,14 @@
 
 body {
   background: url(fon.png);
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.9em;
   color: #3d3f4d;
 }
 
 h3 {
+  font-size: 1.5em;
   text-align: center;
   margin: 20px 0;
 }
@@ -54,7 +55,7 @@ nav a {
 }
 
 .form_box label {
-  font-size: 18px;
+  font-size: 1.2em;
   display: block;
   position: relative;
   margin: 0 0 5px;
@@ -63,7 +64,7 @@ nav a {
 input,
 textarea,
 a {
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #3d3f4d;
   display: inline-block;
   border: 2px solid #cfcfcf;
@@ -78,7 +79,8 @@ a {
   padding: 10px;
 }
 
-.form_box input:focus {
+.form_box input:focus,
+.form_box textarea:focus {
   outline: none;
   border-color: #07a6e6;
 }

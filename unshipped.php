@@ -49,7 +49,7 @@ $show_all = mysqli_query($cnn, "SELECT id, goods, full_price, prepay, contacts, 
     </form>
   </td>
   <td>
-    <form action="edit.php" method="post">
+    <form action="index.php?page_id=edit_page" method="post">
       <input type="text" class="hidden" name="id" value="<?php echo $row['id']; ?>">
       <input type='submit' name='submit' class='btn_status normal' value='изменить'>
     </form>

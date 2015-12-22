@@ -1,4 +1,4 @@
-function getXmlHtttpRequest(){
+function getXmlHtttpRequest ( ) {
   var xmlhttp;
   try {
     xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");

@@ -3,15 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Orders</title>
-</head>
-<body>
-    
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cards</title>
-<!--    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -51,41 +43,41 @@ if(isset($_GET['page_id'])){
 } else {// если page_id не указан грузим главную
 
 if(isset($_POST['submit'])){
-        $goods = isset($_POST['goods']) ? trim(strip_tags($_POST['goods'])): null;//Принимаем форму
-        $contacts = isset($_POST['contacts']) ? trim(strip_tags($_POST['contacts'])) : null;
-        $full_price = isset($_POST['full_price']) ? trim(strip_tags($_POST['full_price'])) : null;
-        $prepay = isset($_POST['prepay']) ? trim(strip_tags($_POST['prepay'])) : null;
-    
-        $goods = mysqli_real_escape_string($cnn, $goods);//Экранируем спец. символы
-        $contacts = mysqli_real_escape_string($cnn, $contacts);
-        $full_price = mysqli_real_escape_string($cnn, $full_price);
-        $prepay = mysqli_real_escape_string($cnn, $prepay);
-        
-        $data = "INSERT INTO orders (goods, contacts, full_price, prepay) VALUES ('$goods', '$contacts', '$full_price', $prepay)";
-        $sql = mysqli_query($cnn, $data);
-        if( !$sql ){
-            echo mysqli_error($cnn);
-            exit;
-        }
-        header('location: index.php');
-        exit;
-    }    
-    
+  $goods = isset($_POST['goods']) ? trim(strip_tags($_POST['goods'])): null;//Принимаем форму
+  $contacts = isset($_POST['contacts']) ? trim(strip_tags($_POST['contacts'])) : null;
+  $full_price = isset($_POST['full_price']) ? trim(strip_tags($_POST['full_price'])) : null;
+  $prepay = isset($_POST['prepay']) ? trim(strip_tags($_POST['prepay'])) : null;
+
+  $goods = mysqli_real_escape_string($cnn, $goods);//Экранируем спец. символы
+  $contacts = mysqli_real_escape_string($cnn, $contacts);
+  $full_price = mysqli_real_escape_string($cnn, $full_price);
+  $prepay = mysqli_real_escape_string($cnn, $prepay);
+
+  $data = "INSERT INTO orders (goods, contacts, full_price, prepay) VALUES ('$goods', '$contacts', '$full_price', '$prepay')";
+  $sql = mysqli_query($cnn, $data);
+  if( !$sql ){
+      echo mysqli_error($cnn);
+      exit;
+  }
+  header('location: index.php');
+  exit;
+}
+
 ?>
     <div class="form_box">
         <h3 class="main_color">Главная</h3>
-        <form action="index.php" method="post">
-            <label for="card_id">Товар:</label>
-            <textarea type="text" class="rfield" name="goods"  rows="5" placeholder="Минвата" required></textarea>
-            <label for="persona">Контакты:</label>
-            <input type="text" class="rfield" name="contacts" placeholder="0981112233" required/>
+        <form action="index.php" method="post" autocomplete="off">
+            <label for="goods">Товар:</label>
+            <textarea type="text" class="rfield" id="goods" name="goods" rows="5" placeholder="Минвата" required></textarea>
+            <label for="contacts">Контакты:</label>
+            <input type="text" class="rfield" id="contacts" name="contacts" placeholder="0981112233" required/>
             <div class="half-input">
-              <label for="user_phone">Сумма заказа:</label>
-              <input type="text" class="rfield" name="full_price" placeholder="333"/>
+              <label for="full_price">Сумма заказа:</label>
+              <input type="text" class="rfield" id="full_price" name="full_price" placeholder="333"/>
             </div>
             <div class="half-input">
-              <label for="user_phone">Предоплата:</label>
-              <input type="text" class="rfield" name="prepay" placeholder="155"/>
+              <label for="prepay">Предоплата:</label>
+              <input type="text" class="rfield" id="prepay" name="prepay" placeholder="155"/>
             </div>
             <input type="submit" class="btn_submit" name="submit" value="Отправить данные" />
         </form>
