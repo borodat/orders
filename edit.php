@@ -39,9 +39,8 @@ if (isset($_POST['submit'])) {
 }
 ?>
   <div class="form_box">
-    <h3 class="main_color">Главная</h3>
-    <form action="index.php?page_id=edit_page" method="post">
-      <input type="text" class="hidden" name="id" value="<?php echo $id?>">
+    <h3 class="main_color">Изменить</h3>
+    <form action="index.php?page_id=edit_page" method="post" autocomplete="off">
       <label for="goods">Товар:</label>
       <textarea type="text" class="rfield" id="goods" name="goods" rows="5" required><?php echo $goods; ?></textarea>
       <label for="contacts">Контакты:</label>
@@ -54,6 +53,7 @@ if (isset($_POST['submit'])) {
         <label for="prepay">Предоплата:</label>
         <input type="text" class="rfield" id="prepay" name="prepay" value="<?php echo $prepay; ?>"/>
       </div>
+      <input type="text" class="hidden" name="id" value="<?php echo $id?>">
       <input type="submit" class="btn_submit" id="update" name="update" value="Отправить данные" />
     </form>
 
